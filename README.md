@@ -1,7 +1,7 @@
-plugin_yykj_serial
+plugin_linkworld
 ==================
 
-支持易运科技的硬件产品
+支持多通道、多协议的通用插件
 
 
 关于配置项的说明：
