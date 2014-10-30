@@ -1,0 +1,6 @@
+# Runtime requirements
+
+pyserial
+paho-mqtt
+pymodbus
+
