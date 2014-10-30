@@ -22,7 +22,7 @@ from libs.plugin_manager import PluginManager
 
 # 全局变量
 # 配置文件名称
-config_file_name = "yykj_serial.cfg"
+config_file_name = "linkworld.cfg"
 
 # 切换工作目录
 # 程序运行路径
@@ -31,8 +31,8 @@ procedure_path = cur_file_dir()
 os.chdir(procedure_path)
 
 # 日志对象
-logger = logging.getLogger('yykj_serial')
-hdlr = logging.FileHandler('./yykj_serial.log')
+logger = logging.getLogger('linkworld')
+hdlr = logging.FileHandler('./linkworld.log')
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr)
