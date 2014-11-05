@@ -14,7 +14,7 @@ import logging
 from libs.base_channel import BaseChannel
 
 
-logger = logging.getLogger('yykj_serial')
+logger = logging.getLogger('linkworld')
 
 
 class TcpClientChannel(BaseChannel):

@@ -13,7 +13,7 @@ from libs.base_protocol import BaseProtocol
 from utils import cur_file_dir, get_subclass
 
 
-logger = logging.getLogger('yykj_serial')
+logger = logging.getLogger('linkworld')
 
 
 class ProtocolManger(object):

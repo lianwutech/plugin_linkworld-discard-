@@ -19,7 +19,7 @@ from protocol_manager import *
 from libs import const
 
 
-logger = logging.getLogger('yykj_serial')
+logger = logging.getLogger('linkworld')
 const.devices_file_name = "devices.txt"
 
 

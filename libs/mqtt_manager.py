@@ -11,7 +11,7 @@ from mqttclient import *
 
 
 # 日志对象
-logger = logging.getLogger('yykj_serial')
+logger = logging.getLogger('linkworld')
 
 
 class MQTTManager(object):

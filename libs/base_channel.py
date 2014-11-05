@@ -10,7 +10,7 @@ import logging
 import threading
 
 
-logger = logging.getLogger('yykj_serial')
+logger = logging.getLogger('linkworld')
 
 
 class BaseChannel(threading.Thread):

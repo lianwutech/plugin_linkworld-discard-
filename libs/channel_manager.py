@@ -13,6 +13,8 @@ import sys
 from libs.base_channel import *
 from libs.utils import cur_file_dir, get_subclass
 
+logger = logging.getLogger('linkworld')
+
 
 class ChannelManager(object):
     def __init__(self, plugin_manager):

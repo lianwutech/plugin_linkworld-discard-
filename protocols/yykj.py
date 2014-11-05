@@ -10,7 +10,7 @@ import logging
 from libs.base_protocol import BaseProtocol
 
 
-logger = logging.getLogger('yykj_serial')
+logger = logging.getLogger('linkworld')
 
 
 class YykjProtocol(BaseProtocol):
