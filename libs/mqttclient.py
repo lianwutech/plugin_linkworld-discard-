@@ -13,7 +13,7 @@ import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 
 
-logger = logging.getLogger('yykj_serial')
+logger = logging.getLogger('linkworld')
 
 
 class MqttClient(threading.Thread):
