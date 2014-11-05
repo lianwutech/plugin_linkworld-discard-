@@ -18,3 +18,13 @@
 2014-11-05 11:06:50,649 INFO Connected with result code 0
 2014-11-05 11:06:52,628 INFO Connected with result code 0
 2014-11-05 11:06:52,656 INFO Connected with result code 0
+2014-11-05 11:11:11,822 ERROR config file is not exist. Please check!
+2014-11-05 11:11:11,826 CRITICAL config_info is None. Please heck!
+2014-11-05 11:11:28,151 ERROR config file is not exist. Please check!
+2014-11-05 11:11:28,153 CRITICAL config_info is None. Please heck!
+2014-11-05 11:11:28,972 ERROR config file is not exist. Please check!
+2014-11-05 11:11:28,973 CRITICAL config_info is None. Please heck!
+2014-11-05 11:14:53,386 INFO send_data:向Topic(gateway)发布消息：{'protocol': 'modbus', 'device_port': '0', 'device_addr': '1', 'device_type': 'easy_run.mt', 'data': '', 'device_id': 'modbus_devices/1/0'}
+2014-11-05 11:14:53,395 INFO Connected with result code 0
+2014-11-05 11:14:53,420 INFO send_data:向Topic(gateway)发布消息：{'protocol': 'yykj', 'device_port': 'port1', 'device_addr': 'usr233', 'device_type': 'easy_run.infrared', 'data': '', 'device_id': 'yykj_devices/usr233/port1'}
+2014-11-05 11:14:53,445 INFO Connected with result code 0

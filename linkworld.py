@@ -58,7 +58,10 @@ def load_config(config_file_name):
 # 主函数
 class LinkWorldDaemon(Daemon):
     def _run(self):
-        # 初始化数据库
+        # 重置程序目录
+        process_path = cur_file_dir()
+        os.chdir(process_path)
+
         # 加载设备数据
         plugin_params = load_config(config_file_name)
         if plugin_params is not None:
