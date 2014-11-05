@@ -35,7 +35,7 @@ hdlr = logging.FileHandler('./linkworld.log')
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr)
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 
 
 def load_config(config_file_name):
