@@ -1,0 +1,20 @@
+2014-11-05 11:04:36,354 INFO send_data:向Topic(gateway)发布消息：{'protocol': 'modbus', 'device_port': '0', 'device_addr': '1', 'device_type': 'easy_run.mt', 'data': '', 'device_id': 'modbus_devices/1/0'}
+2014-11-05 11:04:36,365 INFO Connected with result code 0
+2014-11-05 11:04:36,368 INFO send_data:向Topic(gateway)发布消息：{'protocol': 'yykj', 'device_port': 'port1', 'device_addr': 'usr233', 'device_type': 'easy_run.infrared', 'data': '', 'device_id': 'yykj_devices/usr233/port1'}
+2014-11-05 11:04:36,387 INFO Connected with result code 0
+2014-11-05 11:06:38,566 INFO Connected with result code 0
+2014-11-05 11:06:38,599 INFO Connected with result code 0
+2014-11-05 11:06:40,573 INFO Connected with result code 0
+2014-11-05 11:06:40,605 INFO Connected with result code 0
+2014-11-05 11:06:42,580 INFO Connected with result code 0
+2014-11-05 11:06:42,611 INFO Connected with result code 0
+2014-11-05 11:06:44,588 INFO Connected with result code 0
+2014-11-05 11:06:44,620 INFO Connected with result code 0
+2014-11-05 11:06:46,596 INFO Connected with result code 0
+2014-11-05 11:06:46,629 INFO Connected with result code 0
+2014-11-05 11:06:48,611 INFO Connected with result code 0
+2014-11-05 11:06:48,639 INFO Connected with result code 0
+2014-11-05 11:06:50,619 INFO Connected with result code 0
+2014-11-05 11:06:50,649 INFO Connected with result code 0
+2014-11-05 11:06:52,628 INFO Connected with result code 0
+2014-11-05 11:06:52,656 INFO Connected with result code 0

@@ -80,8 +80,8 @@ class LinkWorldDaemon(Daemon):
 # 主函数
 def main(argv):
     daemon = LinkWorldDaemon('/tmp/plugin-daemon-linkworld.pid',
-                            stdout="/tmp/gateway_plugin_linkworld.stdout",
-                            stderr="/tmp/gateway_plugin_linkworld.stderr")
+                             stdout="/tmp/gateway_plugin_linkworld.stdout",
+                             stderr="/tmp/gateway_plugin_linkworld.stderr")
 
     if len(sys.argv) == 2:
         if 'start' == sys.argv[1]:
