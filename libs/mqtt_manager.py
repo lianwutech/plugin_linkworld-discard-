@@ -26,7 +26,10 @@ class MQTTManager(object):
         for device_network in plugin_params:
             network_name = device_network.get("network_name", "")
             self.mqtt_dict[network_name] = MqttClient(network_name, device_network, self.plugin_manager)
-            self.mqtt_dict[network_name].start()
+            try:
+                self.mqtt_dict[network_name].start()
+            except Exception, e:
+                logger.error("线程启动错误，%r" % e)
             channels = device_network.get("channels", [])
             for channel in channels:
                 preconfigured_devices = channel.get("preconfigured_devices", [])

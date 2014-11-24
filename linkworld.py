@@ -35,7 +35,7 @@ hdlr = logging.FileHandler('./linkworld.log')
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 hdlr.setFormatter(formatter)
 logger.addHandler(hdlr)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 
 def load_config(config_file_name):
@@ -69,7 +69,7 @@ class LinkWorldDaemon(Daemon):
             plugin_manager.load(plugin_params)
         else:
             logger.fatal("config_info is None. Please heck!")
-            sys.exit(1)
+            sys.exit()
 
         while True:
             logger.debug("system is running.")

@@ -10,7 +10,6 @@ import logging
 import threading
 
 import paho.mqtt.client as mqtt
-import paho.mqtt.publish as publish
 
 
 logger = logging.getLogger('linkworld')
@@ -18,6 +17,7 @@ logger = logging.getLogger('linkworld')
 
 class MqttClient(threading.Thread):
     def __init__(self, network_name, network_params, plugin_manager):
+        threading.Thread.__init__(self)
         self.network_name = network_name
         self.plugin_manager = plugin_manager
         self.network_params = network_params
@@ -29,6 +29,8 @@ class MqttClient(threading.Thread):
         self.client_id = mqtt_params.get("client_id", network_name)
         # 加载params
         self.device_dict = dict()
+        self.mqtt_client = None
+        # 构造设备字典
         channels = network_params.get("channels", [])
         for channel in channels:
             channel_name = channel.get("name", "")
@@ -42,9 +44,6 @@ class MqttClient(threading.Thread):
                     device_info["protocol"] = self.protocol
                 device_info["channel"] = channel_name
                 self.device_dict[device_id] = device_info
-                # 上报设备信息
-                self.send_data(device_id, "")
-        threading.Thread.__init__(self)
 
     def add_device(self, device_id, device_info):
         if device_id not in self.device_dict:
@@ -91,6 +90,9 @@ class MqttClient(threading.Thread):
 
         try:
             mqtt_client.connect(self.server_ip, self.server_port, 60)
+            self.mqtt_client = mqtt_client
+            for device_id in self.device_dict:
+                self.send_data(device_id, "")
             mqtt_client.loop_forever()
         except Exception, e:
             logger.error("MQTT链接失败，错误内容:%r" % e)
@@ -99,6 +101,10 @@ class MqttClient(threading.Thread):
             mqtt_client = None
 
     def send_data(self, device_id, device_data):
+        if self.mqtt_client is None:
+            logger.error("mqtt_client is not init.")
+            return False
+
         if device_id in self.device_dict:
             device_info = self.device_dict[device_id]
             if device_data is None:
@@ -116,10 +122,8 @@ class MqttClient(threading.Thread):
 
             # MQTT发布
             try:
-                publish.single(topic=self.gateway_topic,
-                               payload=json.dumps(device_msg),
-                               hostname=self.server_ip,
-                               port=self.server_port)
+                self.mqtt_client.publish(topic=self.gateway_topic,
+                                         payload=json.dumps(device_msg))
                 logger.info("send_data:向Topic(%s)发布消息：%s" % (self.gateway_topic, device_msg))
                 return True
             except Exception, e:
