@@ -5,11 +5,13 @@
 MQTT客户端类
 内部有一个device_id和内部对象id的映射表和基于内部对象id的内部对象字典
 """
+import time
 import json
 import logging
 import threading
 
 import paho.mqtt.client as mqtt
+import mosquitto
 
 
 logger = logging.getLogger('linkworld')
@@ -84,7 +86,8 @@ class MqttClient(threading.Thread):
                 else:
                     logger.error("plugin_manager.process_cmd fail。")
 
-        mqtt_client = mqtt.Client(client_id=self.client_id)
+        logger.debug("启动mqtt")
+        mqtt_client = mosquitto.Mosquitto(client_id=self.client_id)
         mqtt_client.on_connect = on_connect
         mqtt_client.on_message = on_message
 
